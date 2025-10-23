@@ -17,8 +17,10 @@ const form = ref({
 const loading = ref(false)
 const success = ref(false)
 const error = ref(false)
+const loadingSpinner = ref(false)
 
 async function sendEmail() {
+    loadingSpinner.value = true;
     loading.value = true
     success.value = false
     error.value = false
@@ -43,6 +45,7 @@ async function sendEmail() {
     } finally {
         loading.value = false
     }
+    loadingSpinner.value = false;
 }
 
 </script>
@@ -54,15 +57,16 @@ async function sendEmail() {
             <legend class="fieldset-legend">{{ t('message.sendMeMessage') }}</legend>
 
             <label class="label">{{ t('message.name') }}</label>
-            <input type="text" class="input" placeholder="" v-model="form.name" />
+            <input type="text" class="input" placeholder="" v-model="form.name" :disabled="loadingSpinner" />
 
             <label class="label">{{ t('message.email') }}</label>
-            <input type="text" class="input" placeholder="" v-model="form.email" />
+            <input type="text" class="input" placeholder="" v-model="form.email" :disabled="loadingSpinner" />
 
             <label class="label">{{ t('message.message') }}</label>
-            <textarea class="textarea" placeholder="" v-model="form.message"></textarea>
+            <textarea class="textarea" placeholder="" v-model="form.message" :disabled="loadingSpinner"></textarea>
 
             <button @click="sendEmail" class="btn btn-primary mt-4">{{ t('message.send') }}</button>
         </fieldset>
+        <span v-if="loadingSpinner" class="loading loading-spinner loading-xl"></span>
     </div>
 </template>
