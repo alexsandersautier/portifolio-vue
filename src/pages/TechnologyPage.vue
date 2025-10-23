@@ -49,9 +49,9 @@ const technologies = ref([
 </script>
 
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-4">
     <div v-for="(tech, index) in technologies" :key="index" class="">
-      <div class="card card-side bg-base-100 shadow-sm">
+      <div class="card card-side bg-base-300 shadow-sm">
         <figure class="w-28 object-contain">
           <img :src="tech.iconPath" alt="Movie" />
         </figure>
@@ -60,17 +60,13 @@ const technologies = ref([
           <p>{{ t('message.experience') }}: {{ tech.experience }} {{ t('message.year') }}</p>
           <p>
             {{ t('message.wordExperience') }}:
-            <input
-              type="checkbox"
-              :class="{ 'toggle-success': tech.wordExperience }"
-              :checked="tech.wordExperience"
-              class="toggle"
-            />
+            <input type="checkbox" :class="{ 'toggle-success': tech.wordExperience }" :checked="tech.wordExperience"
+              class="toggle" />
           </p>
           <div class="card-actions justify-end">
             <a :href="tech.documentation" target="_blank" class="btn btn-primary">{{
               t('message.documentation')
-            }}</a>
+              }}</a>
           </div>
         </div>
       </div>

@@ -85,7 +85,7 @@ const projects = ref([
     description: 'message.promobile',
     imageUrl: '/promobile.png',
     projectUrl: 'https://play.google.com/store/apps/details?id=net.proxsis.promobile&hl=pt_BR',
-    category: 'message.jobExperience',
+    category: 'message.wordExperience',
     tecnologies: [
       {
         name: 'Ionic 3',
@@ -104,11 +104,7 @@ const projects = ref([
 
 <template>
   <div class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
-    <div
-      v-for="(project, index) in projects"
-      :key="index"
-      class="w-full h-full card bg-base-300 shadow-sm py-2"
-    >
+    <div v-for="(project, index) in projects" :key="index" class="w-full h-full card bg-base-300 shadow-sm py-2">
       <figure>
         <img class="w-[300px] h-[150px]" :src="project.imageUrl" :alt="project.title" />
       </figure>
