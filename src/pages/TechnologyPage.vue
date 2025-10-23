@@ -52,8 +52,8 @@ const technologies = ref([
   <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-4">
     <div v-for="(tech, index) in technologies" :key="index" class="">
       <div class="card card-side bg-base-300 shadow-sm">
-        <figure class="w-28 object-contain">
-          <img :src="tech.iconPath" alt="Movie" />
+        <figure>
+          <img class="object-contain" :src="tech.iconPath" alt="Movie" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">{{ tech.name }}</h2>

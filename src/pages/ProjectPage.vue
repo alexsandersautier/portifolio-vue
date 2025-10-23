@@ -1,4 +1,5 @@
 <script setup>
+import ModalCustom from '@/components/ModalCustom.vue'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
@@ -100,15 +101,17 @@ const projects = ref([
     ],
   },
 ])
+
+const showModal = ref(false)
 </script>
 
 <template>
   <div class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
     <div v-for="(project, index) in projects" :key="index" class="w-full h-full card bg-base-300 shadow-sm py-2">
       <figure>
-        <img class="w-[300px] h-[150px]" :src="project.imageUrl" :alt="project.title" />
+        <img class="w-[300px] h-[150px] object-cover" :src="project.imageUrl" :alt="project.title" />
       </figure>
-      <div class="card-body indicator w-[320px]">
+      <div class="card-body indicator w-full">
         <span class="indicator-end badge badge-primary">{{ t(project.category) }}</span>
         <h2 class="card-title">{{ project.title }}</h2>
         <p class="whitespace-normal wrap-break-words">{{ t(project.description) }}</p>
@@ -120,10 +123,10 @@ const projects = ref([
             </div>
           </div>
         </div>
-        <div class="card-actions">
-          <a :href="project.projectUrl" target="_blank" class="btn btn-primary">{{
-            t('message.seeProject')
-          }}</a>
+        <div class="w-full flex justify-between">
+          <a :href="project.projectUrl" target="_blank" class="btn btn-primary">{{ t('message.seeProject') }}</a>
+          <!-- <button class="btn btn-accent" @click="showModal = !showModal">{{ t('message.seeDetails') }}</button>
+          <ModalCustom :currentProject="project" :show="showModal" @update:show="showModal = !showModal" /> -->
         </div>
       </div>
     </div>

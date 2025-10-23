@@ -56,6 +56,13 @@ app.use(
                     email: 'Email',
                     message: 'Message',
                     send: 'Send',
+                    validator: {
+                        email: 'Please enter a valid email address.',
+                        name: 'Please enter a name with at least 3 characters.',
+                        message: 'Please enter a message.',
+                    },
+                    seeDetails: 'See Details',
+                    close: 'Close',
                 },
             },
             pt: {
@@ -98,6 +105,13 @@ app.use(
                     email: 'Email',
                     message: 'Mensagem',
                     send: 'Enviar',
+                    validator: {
+                        email: 'Por favor, insira um endereço de email válido.',
+                        name: 'Por favor, insira um nome com pelo menos 3 caracteres.',
+                        message: 'Por favor, insira uma mensagem.',
+                    },
+                    seeDetails: 'Ver Detalhes',
+                    close: 'Fechar',
                 },
             },
         },
