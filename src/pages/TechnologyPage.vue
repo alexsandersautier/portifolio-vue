@@ -45,6 +45,13 @@ const technologies = ref([
     documentation: 'https://laravel.com/',
     wordExperience: true,
   },
+  {
+    name: 'Python',
+    experience: '3',
+    iconPath: '/icons/python-100.png',
+    documentation: 'https://www.python.org/',
+    wordExperience: true,
+  },
 ])
 </script>
 
@@ -66,7 +73,7 @@ const technologies = ref([
           <div class="card-actions justify-end">
             <a :href="tech.documentation" target="_blank" class="btn btn-primary">{{
               t('message.documentation')
-              }}</a>
+            }}</a>
           </div>
         </div>
       </div>
