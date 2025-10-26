@@ -64,7 +64,7 @@ app.use(
                     seeDetails: 'See Details',
                     close: 'Close',
                     contrestoque: 'Inventory control system',
-                    development: 'Devolopment'
+                    development: 'Development'
                 },
             },
             pt: {
