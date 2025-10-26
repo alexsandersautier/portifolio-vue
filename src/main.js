@@ -63,6 +63,8 @@ app.use(
                     },
                     seeDetails: 'See Details',
                     close: 'Close',
+                    contrestoque: 'Inventory control system',
+                    development: 'Devolopment'
                 },
             },
             pt: {
@@ -112,6 +114,8 @@ app.use(
                     },
                     seeDetails: 'Ver Detalhes',
                     close: 'Fechar',
+                    contrestoque: 'Sistema de controle de estoque',
+                    development: 'Em desenvolvimento'
                 },
             },
         },

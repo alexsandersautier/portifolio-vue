@@ -9,8 +9,8 @@ const projects = ref([
     title: 'Belle Fête',
     description: 'message.belleFete',
     imageUrl: '/belle-fete.webp',
-
     category: 'message.freelance',
+    isDevelopment: false,
     tecnologies: [
       {
         name: 'Vue JS',
@@ -35,6 +35,7 @@ const projects = ref([
     imageUrl: '/gkids.png',
     projectUrl: 'https://gkidsaba.com.br/admin/login',
     category: 'message.freelance',
+    isDevelopment: false,
     tecnologies: [
       {
         name: 'Laravel',
@@ -49,6 +50,7 @@ const projects = ref([
     imageUrl: '/logo-spacefit.jpg',
     projectUrl: 'https://www.academiaspacefit.com.br/',
     category: 'message.freelance',
+    isDevelopment: false,
     tecnologies: [
       {
         name: 'Vue JS',
@@ -68,6 +70,7 @@ const projects = ref([
     imageUrl: '/rick-and-morty.png',
     projectUrl: 'https://devalexsander-rickandmorty.netlify.app/',
     category: 'message.course',
+    isDevelopment: false,
     tecnologies: [
       {
         name: 'Vue JS',
@@ -87,6 +90,7 @@ const projects = ref([
     imageUrl: '/promobile.png',
     projectUrl: 'https://play.google.com/store/apps/details?id=net.proxsis.promobile&hl=pt_BR',
     category: 'message.wordExperience',
+    isDevelopment: false,
     tecnologies: [
       {
         name: 'Ionic 3',
@@ -100,6 +104,26 @@ const projects = ref([
       },
     ],
   },
+  {
+    title: 'Contrestoque',
+    description: 'message.contrestoque',
+    imageUrl: '/sge-vue.png',
+    projectUrl: 'https://sge-vue.vercel.app/',
+    category: 'message.course',
+    isDevelopment: true,
+    tecnologies: [
+      {
+        name: 'Vue JS',
+        type: 'badge-success',
+        img: '/icons/vue.png',
+      },
+      {
+        name: 'Vuetify',
+        type: 'badge-warning',
+        img: '/icons/vuetify.svg',
+      },
+    ],
+  },
 ])
 
 const showModal = ref(false)
@@ -109,10 +133,14 @@ const showModal = ref(false)
   <div class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
     <div v-for="(project, index) in projects" :key="index" class="w-full h-full card bg-base-300 shadow-sm py-2">
       <figure>
-        <img class="w-[300px] h-[150px] object-cover" :src="project.imageUrl" :alt="project.title" />
+        <img class="w-[300px] h-[150px] object-cover" :src="project?.imageUrl" :alt="project.title" />
       </figure>
       <div class="card-body indicator w-full">
-        <span class="indicator-end badge badge-primary">{{ t(project.category) }}</span>
+        <div class="flex gap-4">
+          <span class="indicator-end badge badge-primary">{{ t(project.category) }}</span>
+          <span v-if="project.isDevelopment" class="indicator-end badge badge-error">{{ t('message.development')
+          }}</span>
+        </div>
         <h2 class="card-title">{{ project.title }}</h2>
         <p class="whitespace-normal wrap-break-words">{{ t(project.description) }}</p>
         <div class="flex flex-wrap gap-1">
