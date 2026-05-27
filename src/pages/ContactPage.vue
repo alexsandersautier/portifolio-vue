@@ -73,6 +73,11 @@ async function sendEmail() {
 </script>
 <template>
     <div class="w-full flex flex-col items-center justify-center gap-4 p-4">
+        <section>
+            <a href="https://whatsa.me/5549988139463/?t=Ol%C3%A1,%20vim%20pelo%20seu%20site%20" target="_blank">
+                <img class="" src="/wpp.gif" alt="wpp-logo">
+            </a>
+        </section>
         <h1>{{ t('message.myEmail') }} alexsanderesramos@gmail.com</h1>
         <form @submit.prevent="sendEmail">
             <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs md:w-xl border p-4">

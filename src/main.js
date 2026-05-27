@@ -64,7 +64,9 @@ app.use(
                     seeDetails: 'See Details',
                     close: 'Close',
                     contrestoque: 'Inventory control system',
-                    development: 'Development'
+                    development: 'Development',
+                    website: 'Web Development',
+                    rpa: 'RPA - Automation'
                 },
             },
             pt: {
@@ -115,7 +117,9 @@ app.use(
                     seeDetails: 'Ver Detalhes',
                     close: 'Fechar',
                     contrestoque: 'Sistema de controle de estoque',
-                    development: 'Em desenvolvimento'
+                    development: 'Em desenvolvimento',
+                    website: 'Desenvolvimento Web',
+                    rpa: 'RPA - Automações'
                 },
             },
         },
